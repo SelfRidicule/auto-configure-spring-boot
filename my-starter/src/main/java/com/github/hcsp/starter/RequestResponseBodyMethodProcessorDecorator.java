@@ -27,8 +27,7 @@ public class RequestResponseBodyMethodProcessorDecorator implements HandlerMetho
 
     @Override
     public boolean supportsReturnType(MethodParameter methodParameter) {
-        return (AnnotatedElementUtils.hasAnnotation(methodParameter.getContainingClass(), MyResponseBody.class) ||
-                methodParameter.hasMethodAnnotation(MyResponseBody.class));
+        return AnnotatedElementUtils.hasAnnotation(methodParameter.getContainingClass(), MyResponseBody.class) || methodParameter.hasMethodAnnotation(MyResponseBody.class);
     }
 
     @Override
